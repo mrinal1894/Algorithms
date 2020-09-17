@@ -6,10 +6,10 @@
  * @version (a version number or a date)
  */
 public class find_max_subarray {
-    public static int[] find_max_crossing(int[] A,int low,int mid,int high){
+    public static double[] find_max_crossing(double[] A,int low,int mid,int high){
         int max_left=mid;
-        int left_sum=A[mid];
-        int sum=0;
+        double left_sum=A[mid];
+        double sum=0;
         for (int i=mid;i>=low;i-=1){
             sum=sum+A[i];
             if (sum>left_sum){
@@ -18,7 +18,7 @@ public class find_max_subarray {
             }
         }
         int max_right=mid+1;
-        int right_sum=A[mid+1];
+        double right_sum=A[mid+1];
         sum=0;
         for (int i=mid+1;i<=high;i+=1){
             sum=sum+A[i];
@@ -27,19 +27,19 @@ public class find_max_subarray {
                 max_right=i;
             }
         }
-        int[] ans={max_left,max_right,left_sum+right_sum};
+        double[] ans={max_left,max_right,left_sum+right_sum};
         return ans;
     }
     
-    public static int[] find_max_subarray(int[] A,int low,int high){
+    public static double[] find_max_subarray(double[] A,int low,int high){
         if (high==low){
-            int[] ans={low,high,A[low]};
+            double[] ans={low,high,A[low]};
             return ans;
         }
         int mid=(low+high)/2;
-        int[] left_max=find_max_subarray(A,low,mid);
-        int[] right_max=find_max_subarray(A,mid+1,high);
-        int[] cross_max=find_max_crossing(A,low,mid,high);
+        double[] left_max=find_max_subarray(A,low,mid);
+        double[] right_max=find_max_subarray(A,mid+1,high);
+        double[] cross_max=find_max_crossing(A,low,mid,high);
         if (left_max[2]>=right_max[2] && left_max[2]>=cross_max[2]){
             return left_max;
         }
@@ -49,10 +49,14 @@ public class find_max_subarray {
         return cross_max;
     }
     
-    public static void main(int[] args){
-        int[] maxs=find_max_subarray(args,0,args.length-1);
-        System.out.println(maxs[0]);
-        System.out.println(maxs[1]);
-        System.out.println(maxs[2]);
+    public static void main(String[] args){
+        double [] inputs=new double [args.length];
+        for(int i=0;i<args.length;i+=1){
+            inputs[i]=Double.parseDouble(args[i]);
+        }
+        double[] maxs=find_max_subarray(inputs,0,args.length-1);
+        System.out.println("start index: "+(int)maxs[0]);
+        System.out.println("end index: "+(int)maxs[1]);
+        System.out.println("max sum: "+maxs[2]);
     }
 }
