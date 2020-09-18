@@ -16,5 +16,5 @@ USER INSTRUCTIONS: n is the size of the square matrix which is the input given a
 		   the matrix_multiplication program time varies as n^3.
 		   the srassens algorithm program reduces the complexity to n^(log 7)
 		   there is also a matrix_mul in which the matrices are subdivided using two array indicating the index of rows and columns and is 
-		   faster than the matrix multiplication algorithm.
+		   faster than the matrix multiplication_algorithm in which new smaller arrays are created while subdividing.
 
