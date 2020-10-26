@@ -1,14 +1,6 @@
-------------------------------------------------------------------------
-This is the project README file. Here, you should describe your project.
-Tell the reader (someone who does not know anything about this project)
-all he/she needs to know. The comments should usually include at least:
-------------------------------------------------------------------------
 
-PROJECT TITLE: matrix multipication
-PURPOSE OF PROJECT:n by n matrix multiplication, here n is a power of two, so zeros can be padded for n that are not power of two
-VERSION or DATE:
-HOW TO START THIS PROJECT:
-AUTHORS:
+TITLE: matrix multipication
+PURPOSE:n by n matrix multiplication, here n is a power of two, so zeros can be padded for n that are not power of two
 USER INSTRUCTIONS: n is the size of the square matrix which is the input given as an argument to the main function.
 		   n is first coverted to the nearest power of 2, greater than n.
 		   the program ask for the inputs A[i][j] and B[i][j].
